@@ -29,14 +29,26 @@ int main()
 {	
 		int martix[5][5]={{1, 2, 3, 4, 5}, {2, 3, 4, 5, 6}, {3, 4, 5, 6, 7}, {4, 5, 6, 7, 8}, {5, 6, 7, 8, 9}};
 
-		vector<vector<int> > array(martix, martix+25);
+		vector<vector<int> > array;
 
-		for (auto i:martix){
-				cout<<i<<endl;
-				//for(auto j:i)
-				//		cout<<j<<" ";
-				cout<<endl;
+
+		for (int i=0; i<5; i++){
+				vector<int> tt;
+				for (int j=0; j<5; j++) {
+						tt.push_back(martix[i][j]);
+				}
+				array.push_back(tt);
 		}
+		
+		for (int i=0; i<5; i++){
+			for (int j=0; j<5; j++)
+				cout<<array[i][j]<<" ";
+			cout<<endl;
+		}
+		
+		Solution s;
+		if (s.Find(7, array)) cout<<"7 find"<<endl;
+		else cout<<"nothing find"<<endl;
 
 		return 0;
 }
