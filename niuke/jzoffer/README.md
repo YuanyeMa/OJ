@@ -56,11 +56,11 @@
 
 题目描述：  
 
-​	斐波那契数列的表达式如下所示，第$0$ 项为$0$ ，求第$ n $ 项的值，$n<=39$ 
+​	斐波那契数列的表达式如下所示，第0 项为0 ，求第n  项的值，n<=39
 
-- ![](http://latex.codecogs.com/gif.latex?F_0 = 0)
-- ![](http://latex.codecogs.com/gif.latex?F_1 = 1)
-- ![](http://latex.codecogs.com/gif.latex?F_n = F_{n-1} + F_{n-2} (n>=2))
+- ![](http://latex.codecogs.com/gif.latex?F_0=0)
+- ![](http://latex.codecogs.com/gif.latex?F_1=1)
+- ![](http://latex.codecogs.com/gif.latex?F_n=F_{n-1}+F_{n-2}(n>=2))
 
 解题思路：
 
@@ -73,13 +73,13 @@
 
 关于矩阵求解方式  
 
-![](http://latex.codecogs.com/gif.latex? \begin{bmatrix} F_3 \\\\ F_2 \end{bmatrix} = \begin{bmatrix} 1 &1 \\\\ 1& 0\end{bmatrix}* \begin{bmatrix} F_2 \\\\ F_1 \end{bmatrix} = \begin{bmatrix} 1 &1 \\\\ 1& 0\end{bmatrix} *\begin{bmatrix} 1 &1 \\\\ 1& 0\end{bmatrix} * \begin{bmatrix} F_1 \\\\ F_0 \end{bmatrix} )
+![](http://latex.codecogs.com/gif.latex?\begin{bmatrix}F_3\\\\F_2\end{bmatrix}=\begin{bmatrix}1&1\\\\1&0\end{bmatrix}*\begin{bmatrix}F_2\\\\F_1\end{bmatrix}=\begin{bmatrix}1&1\\\\1&0\end{bmatrix}*\begin{bmatrix}1&1\\\\1&0\end{bmatrix}*\begin{bmatrix}F_1\\\\F_0\end{bmatrix})
 
 **矩阵快速幂**
 
 例如求
 
-![](http://latex.codecogs.com/gif.latex?A^9 = A*A*A*A*A*A*A*A*A)  9次乘法
-![](http://latex.codecogs.com/gif.latex? = A*(A*A)*(A*A)*(A*A)*(A*A) = A*(A^2)^4 ) 6次乘法
-![](http://latex.codecogs.com/gif.latex?=A*((A^2)^2)^2)  4次乘法
+![](http://latex.codecogs.com/gif.latex?A^9=A*A*A*A*A*A*A*A*A)  9次乘法    
+![](http://latex.codecogs.com/gif.latex?=A*(A*A)*(A*A)*(A*A)*(A*A)=A*(A^2)^4 ) 6次乘法    
+![](http://latex.codecogs.com/gif.latex?=A*((A^2)^2)^2)  4次乘法   
 
