@@ -11,6 +11,7 @@
 	矩阵是有序的，对于行，从左往右下标变大，元素值递增；对于列从上往下，列下标变大，元素值递增；
 	因此可以从矩阵的右上角开始搜索，当target元素比当前元素大时，行索引+1往下方搜索；否则列索引-1往左边搜索。
 	
+
 # 02 - [替换空格](./02-replaceSpace.cpp) 
 
 题目描述：  
@@ -24,6 +25,7 @@
 
 题目描述：  
 	输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。
+
 解题思路：  
 	此题和使用递归逆转单链表类似，但是更简单一些，可以设置一个全局或者似有的vector<int>容器，递归返回的时候，将节点的value域push_back给vector，最后返回构造的vector即可。
 
@@ -43,7 +45,41 @@
 
 解题思路：  
 	两个栈，一个作为调整元素顺序的buffer使用。
-	入队时：先将stack1的元素都pop到stack2中去；然后将新元素push到stack1；再将stack2中的pop回stack1;
-	出队时：直接从stack1 pop一个元素。
-	
-	
+
+ - 入队时：先将stack1的元素都pop到stack2中去；然后将新元素push到stack1；再将stack2中的pop回stack1;
+
+- 出队时：直接从stack1 pop一个元素。
+
+  
+
+# 06 - [斐波那契数列](./06-Fibonacci.cpp)  
+
+题目描述：  
+
+​	斐波那契数列的表达式如下所示，第$0$ 项为$0$ ，求第$ n $ 项的值，$n<=39$ 
+
+- ![](http://latex.codecogs.com/gif.latex?F_0 = 0)
+- ![](http://latex.codecogs.com/gif.latex?F_1 = 1)
+- ![](http://latex.codecogs.com/gif.latex?F_n = F_{n-1} + F_{n-2} (n>=2))
+
+解题思路：
+
+1. 递归解法，时间复杂度为![](http://latex.codecogs.com/gif.latex?O(2^n))；
+2. 循环解法， 时间复杂度为![](http://latex.codecogs.com/gif.latex?O(n))；
+3. 矩阵求解， 时间复杂度为![](http://latex.codecogs.com/gif.latex?O(logn))；
+4. 公式求解， 时间复杂度为![](http://latex.codecogs.com/gif.latex?O(1))，但是涉及到无理数计算，会损失精度；
+
+
+
+关于矩阵求解方式  
+
+![](http://latex.codecogs.com/gif.latex? \begin{bmatrix} F_3 \\\\ F_2 \end{bmatrix} = \begin{bmatrix} 1 &1 \\\\ 1& 0\end{bmatrix}* \begin{bmatrix} F_2 \\\\ F_1 \end{bmatrix} = \begin{bmatrix} 1 &1 \\\\ 1& 0\end{bmatrix} *\begin{bmatrix} 1 &1 \\\\ 1& 0\end{bmatrix} * \begin{bmatrix} F_1 \\\\ F_0 \end{bmatrix} )
+
+**矩阵快速幂**
+
+例如求
+
+![](http://latex.codecogs.com/gif.latex?A^9 = A*A*A*A*A*A*A*A*A)  9次乘法
+![](http://latex.codecogs.com/gif.latex? = A*(A*A)*(A*A)*(A*A)*(A*A) = A*(A^2)^4 ) 6次乘法
+![](http://latex.codecogs.com/gif.latex?=A*((A^2)^2)^2)  4次乘法
+
