@@ -378,7 +378,7 @@
 
 使用一个临时变量用于保存双向链表的尾部：`lastNodeInList`   
 
-先遍历左子树直到叶节点，将`lastNodeInList`指向此叶子节点，然后递归返回，返回后将当前的左孩子指向``lastNodeInList`:`pCurrent->left = lastNodeInList`,并将`lastNodeInList->right = pCurrent`,然后遍历右子树。注意`lastNodeInList`需要在不同层的递归函数之间传递，因此需要使用地址进行传递。
+先遍历左子树直到叶节点，将`lastNodeInList`指向此叶子节点，然后递归返回，返回后将当前的左孩子指向`lastNodeInList`即`pCurrent->left = lastNodeInList`,并将`lastNodeInList->right = pCurrent`,然后遍历右子树。注意`lastNodeInList`需要在不同层的递归函数之间传递，因此需要使用地址进行传递。
 
 # 38 - [二叉树的深度](./38-TreeDepth.cpp)  
 
