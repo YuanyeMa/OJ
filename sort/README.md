@@ -52,17 +52,17 @@
 
 稳定性：  稳定  
 
-## 冒泡排序
+## [冒泡排序](./bubble_sort.cpp)
 
 算法思想： 
 
 每一趟只对比相邻的两个元素，如果不符合排序条件，就交换这两个元素的位置。直到排好序列。  
 
-时间复杂度：  
+时间复杂度： ![](http://latex.codecogs.com/gif.latex?O(n^2))   
 
-最坏情况：  
+最坏情况： ![](http://latex.codecogs.com/gif.latex?O(n^2))   
 
-稳定性：  
+稳定性： 是 
 
 
 
