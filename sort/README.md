@@ -62,7 +62,7 @@
 
 最坏情况： ![](http://latex.codecogs.com/gif.latex?O(n^2))   
 
-稳定性： 是 
+稳定性： 稳定 
 
 
 
@@ -78,15 +78,17 @@
 
 
 
-## 快速排序
+## [快速排序](./quick_sort.cpp)
 
-算法思想：   
+算法思想:  
 
-时间复杂度：  
+先确定一个枢值，然后将比枢值大的元素都放在枢值的右边，把比枢值小的元素都放在枢值得左边。这样就能确定枢值在序列中的最终位置，然后分别对枢值左右两边的序列递归调用排序算法，就能排好序列。
+
+时间复杂度：![](http://latex.codecogs.com/gif.latex?O(nlogn))    
 
 最坏情况：  
 
-稳定性：  
+稳定性：  不稳定  
 
 
 
@@ -129,10 +131,10 @@
 | 算法     | 平均时间复杂度 | 最坏情况下时间复杂度 | 空间复杂度 | 稳定性 |
 | -------- | :----------: | :---------- :| :------- :|: ------ :|
 | 选择排序 | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(1)) | 是 |
-| 插入排序 |                |                      |            |        |
-| 冒泡排序 |                |                      |            |        |
+| 插入排序 | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) |            | 是 |
+| 冒泡排序 | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) |            | 是 |
 | 桶排序 |                |                      |            |        |
-| 快速排序 |                |                      |            |        |
+| 快速排序 | ![](http://latex.codecogs.com/gif.latex?O(nlogn)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(log(n+1))) | 否 |
 | 归并排序 |                |                      |            |        |
 | 堆 排序 |                |                      |            |        |
 
