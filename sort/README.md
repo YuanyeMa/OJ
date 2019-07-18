@@ -1,5 +1,15 @@
 # 常用排序算法
 
+## 排序算法分类
+
+插入排序：直接插入排序、折半插入排序、希尔排序
+
+交换排序：冒泡排序、快速排序
+
+选择排序：简单选择排序、堆排序
+
+归并排序
+
 ## [选择排序](./select_sort.cpp)
 
 算法思想：  
@@ -261,13 +271,14 @@ void MergeSort(ElemType A[], int low, int high)
 
 
 
-| 算法     | 平均时间复杂度 | 最坏情况下时间复杂度 | 空间复杂度 | 稳定性 |
-| -------- | :----------: | :---------- :| :------- :|: ------ :|
-| 选择排序 | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(1)) | 是 |
-| 插入排序 | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) |            | 是 |
-| 冒泡排序 | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) |            | 是 |
-| 桶排序 |                |                      |            |        |
-| 快速排序 | ![](http://latex.codecogs.com/gif.latex?O(nlogn)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(log(n+1))) | 否 |
-| 归并排序 |                |                      |            |        |
-| 堆 排序 |                |                      |            |        |
+| 算法     | 最好情况时间复杂度|平均时间复杂度 | 最坏情况下时间复杂度 | 空间复杂度 | 稳定性 |
+| -------- | :----------: | :---------- :| :------- : | -------- - | -------- - |
+| 直接插入排序 |![](http://latex.codecogs.com/gif.latex?O(n)) |![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(1)) | 是 |
+| 冒泡排序 |![](http://latex.codecogs.com/gif.latex?O(n)) |![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(1)) | 是 |
+|简单选择排序 | ![](http://latex.codecogs.com/gif.latex?O(n^2))  | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(1)) | 否|
+| 快速排序 | ![](http://latex.codecogs.com/gif.latex?O(nlogn)) |![](http://latex.codecogs.com/gif.latex?O(nlogn)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(log(n+1))) | 否 |
+| 归并排序 |  ||                      |            |        |
+| 堆排序 |    |            |                      |            |        |
+| 桶排序 |    |            |                      |            |        |
+
 
