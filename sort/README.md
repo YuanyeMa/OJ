@@ -28,6 +28,74 @@
 
 稳定性： 数值相等的两个元素在排序前后的相对位置不变，因此此算法是稳定的。  
 
+
+
+```C
+void SelectSort(ElemType A[]. int n)
+{
+  for (i=0; i<n-1; i++) {
+    min = i;
+    for (j=i+1; j<n; j++)
+      if (A[j] < A[min]) min = j;
+    if (min != i ) swap(A[i], A[min]);
+  }
+}
+```
+
+## 堆排序
+
+算法思想：   
+
+"小顶堆数据结构"：把未排序的数组看成是二叉树的数组存储结构，父节点小于左右孩子。  
+因此堆排序算法可分为：建堆、调整以及输出三个阶段。
+
+- 建堆： 调整元素位置使其满足"小顶堆"结构；
+- 调整： 将堆顶元素(最小元素)移动到最末端，然后调整前边的元素位置，使其重新满足“小顶堆”结构；
+- 输出： 将上一步放在最末端的元素输出，并重复“建堆、调整、输出“步骤。  
+
+时间复杂度：  
+
+最坏情况：  
+
+稳定性：  
+
+``` c
+// 建立大根堆
+void BuildMaxHeap(ElemType A[], int len)
+{
+  for (int i=len/2; i>0; i--)
+    AdjustDown(A, i, len);
+}
+
+void AdjustDown(ElemType A[], int k, int len)
+{
+  A[0] = A[k];
+  for (i=2*k); i<=len; i*=2) {
+    if (i<len && A[i]<A[i+1]) 
+      i++;
+    if (A[0] >= A[i])
+      break;
+    else{
+      A[k] = A[i];
+      k = i;
+    }
+  }// end of for
+  A[k] = A[0];
+}
+
+// 堆排序
+void HeapSort(ElemType A[], int len)
+{
+  BuildMaxHeap(A, len);
+  for (i=len; i>1; i--) {
+    Swap(A[i], A[1]);
+    AdjustDown(A, 1, i-1);
+  }
+}
+```
+
+
+
 ## [插入排序](./insert_sort.cpp)
 
 算法思想：  
@@ -52,6 +120,23 @@
 
 稳定性：  稳定  
 
+```c
+void InsertSort(ElemType A[], int n)
+{
+	int i, j;
+	for (i = 2; i<=n; i++) {
+		if (A[i].key < A[i-1].key) {
+			A[0] = A[i].key;
+			for (j=i-1; A[0].key<A[j].key); --j) 
+				A[j+1] = A[j];
+			A[j+1] = A[0];
+		}
+	}
+}
+```
+
+
+
 ## [冒泡排序](./bubble_sort.cpp)
 
 算法思想： 
@@ -63,6 +148,59 @@
 最坏情况： ![](http://latex.codecogs.com/gif.latex?O(n^2))   
 
 稳定性： 稳定 
+
+```c
+void BubbleSort(ElemType A[], int n)
+{
+  for (i=0; i<n-1; i++) {
+    flag = false;
+    for (j=n-1; j>i; j--) {
+      if(A[j-1].key > A[j].key) {
+      	swap(A[j-1], A[j]);
+        flag = true;
+      }
+    }
+    if (flag == false) 
+      return;
+  }
+}
+```
+
+## [快速排序](./quick_sort.cpp)
+
+算法思想:  
+
+先确定一个枢值，然后将比枢值大的元素都放在枢值的右边，把比枢值小的元素都放在枢值得左边。这样就能确定枢值在序列中的最终位置，然后分别对枢值左右两边的序列递归调用排序算法，就能排好序列。
+
+时间复杂度：![](http://latex.codecogs.com/gif.latex?O(nlogn))    
+
+最坏情况：  
+
+稳定性：  不稳定  
+
+```c
+void QuickSort(ElemType A[], int low, int high)
+{
+  if (low < high) {
+    int pivotpos = Partition(A, low, high);
+    QuickSort(A, low, pivotpos-1);
+    QuickSort(A, pivotpos+1, high);
+  }
+}
+
+int Partition(ElemType A[], int low, int high)
+{
+	ElemType pivot = A[low];
+  while (low<high) {
+    while (low<high && A[high] >= pivot) --high;
+    A[low] = A[high];
+    while (low<high && A[low] >= pivot) ++low;
+    A[high] = A[low];
+  }
+  A[low] = pivot;
+  return low;
+}
+```
 
 
 
@@ -78,18 +216,6 @@
 
 
 
-## [快速排序](./quick_sort.cpp)
-
-算法思想:  
-
-先确定一个枢值，然后将比枢值大的元素都放在枢值的右边，把比枢值小的元素都放在枢值得左边。这样就能确定枢值在序列中的最终位置，然后分别对枢值左右两边的序列递归调用排序算法，就能排好序列。
-
-时间复杂度：![](http://latex.codecogs.com/gif.latex?O(nlogn))    
-
-最坏情况：  
-
-稳定性：  不稳定  
-
 
 
 ## 归并排序
@@ -102,25 +228,32 @@
 
 稳定性：  
 
+```C
+ElemType * B = (ElemType *)malloc((n+1)*sizeof(ElemType));
+void Merge(ElemType A[], int low, int high) 
+{
+  for (int k=low; k<high; k++)
+    B[k] = A[k];
+  for (i=low; j=mid+1, k=i; i<mid && j<= high; k++) {
+    if (B[i]<B[j])
+      A[k] = B[i++];
+    else
+      A[k] = B[j++];
+  } // end for
+  while (i<=mid) A[k++] = B[i++];
+  while (j<=high) A[k++] = B[j++];
+}
 
-
-## 堆排序
-
-算法思想：   
-
-"小顶堆数据结构"：把未排序的数组看成是二叉树的数组存储结构，父节点小于左右孩子。  
-因此堆排序算法可分为：建堆、调整以及输出三个阶段。
-- 建堆： 调整元素位置使其满足"小顶堆"结构；
-- 调整： 将堆顶元素(最小元素)移动到最末端，然后调整前边的元素位置，使其重新满足“小顶堆”结构；
-- 输出： 将上一步放在最末端的元素输出，并重复“建堆、调整、输出“步骤。  
-
-时间复杂度：  
-
-最坏情况：  
-
-稳定性：  
-
-
+void MergeSort(ElemType A[], int low, int high)
+{
+  if (low<high) {
+    int mid = (low+high)/2;
+    MergeSort(A, low, mid);
+    MergeSort(A, mid+1, high);
+    Merge(A, low, mid, high);
+  }
+}
+```
 
 
 
