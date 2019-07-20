@@ -430,6 +430,38 @@
 
 解题思路:  
 
+# 36 - [两个链表的第一个公共节点](./36-FindFirstCommonNode.cpp)
+
+题目描述：  
+
+输入两个链表，找出它们的第一个公共结点。  
+
+解题思路：  
+
+有三个思路：
+
+- ![](http://latex.codecogs.com/gif.latex?O(N^2))的解法：两层循环分别对比两个节点是否相同；
+
+- ![](http://latex.codecogs.com/gif.latex?O(max(m,n))) 的解法：使用栈，先将两个链表的所有元素入栈，然后出栈的时候发现下一次对比的两个节点不同，则当前节点就是第一个公共节点；
+
+- ![](http://latex.codecogs.com/gif.latex?O(m+n))的解法：先依次遍历两个链表求得长度m和n，然后求出m和n的差k，将长的链表先向后移动k个位置，然后一起比较两个链表的节点是否相同，依次向后进行，当发现两个节点相同时，这个相同的节点就是公共节点。      
+
+看到别人的一个思路，和我第一个思路很像，但是效率要高，思路如下图，把两个链表依次接起来。
+![](./36.jpeg)
+
+```python
+class Solution:
+    def FindFirstCommonNode(self, pHead1, pHead2):
+        # write code here
+        if pHead1 == None or pHead2 == None:
+            return None
+        cur1, cur2 = pHead1, pHead2
+        while cur1 != cur2:
+            cur1 = cur1.next if cur1 != None else pHead2
+            cur2 = cur2.next if cur2 != None else pHead1
+        return cur1
+```
+
 
 
 # 38 - [二叉树的深度](./38-TreeDepth.cpp)  
