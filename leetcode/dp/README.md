@@ -14,7 +14,7 @@
 
 - [x] [63-不同路径II](https://leetcode-cn.com/problems/unique-paths-ii/) 
 
-- [ ] [354-俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/)  --- 困难
+- [ ] [354-俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/) 
 
 - [x] [338-比特位计数](https://leetcode-cn.com/problems/counting-bits/)
 
@@ -37,4 +37,26 @@
 - [ ] [526-优美的排列](https://leetcode-cn.com/problems/beautiful-arrangement/)
 
 - [ ] [486-预测赢家](https://leetcode-cn.com/problems/predict-the-winner/)
+
+
+
+## [acWing2019-week8-动态规划](https://www.bilibili.com/video/av66331017)
+
+- [ ] [53-最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
+
+- [x] [120-三角形最小路径和](https://leetcode-cn.com/problems/triangle/)   
+
+- [x] [198-打家劫舍](https://leetcode-cn.com/problems/house-robber/)
+
+- [ ] [300-最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+
+- [ ] [72-编辑距离](https://leetcode-cn.com/problems/edit-distance/)
+
+- [ ] [518-零钱兑换 II](https://leetcode-cn.com/problems/coin-change-2/)
+
+- [ ] [91-解码方法](https://leetcode-cn.com/problems/decode-ways/)
+
+- [ ] [664-奇怪的打印机](https://leetcode-cn.com/problems/strange-printer/)
+
+- [ ]  [10-正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/)
 
