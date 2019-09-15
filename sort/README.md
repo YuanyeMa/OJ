@@ -52,7 +52,7 @@ void SelectSort(ElemType A[]. int n)
 }
 ```
 
-## 堆排序
+## [堆排序](./heap_sort.cpp)
 
 算法思想：   
 
@@ -80,7 +80,7 @@ void BuildMaxHeap(ElemType A[], int len)
 void AdjustDown(ElemType A[], int k, int len)
 {
   A[0] = A[k];
-  for (i=2*k); i<=len; i*=2) {
+  for (i=2*k; i<=len; i*=2) {
     if (i<len && A[i]<A[i+1]) 
       i++;
     if (A[0] >= A[i])
@@ -277,8 +277,8 @@ void MergeSort(ElemType A[], int low, int high)
 | 冒泡排序 |![](http://latex.codecogs.com/gif.latex?O(n)) |![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(1)) | 是 |
 |简单选择排序 | ![](http://latex.codecogs.com/gif.latex?O(n^2))  | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(1)) | 否|
 | 快速排序 | ![](http://latex.codecogs.com/gif.latex?O(nlogn)) |![](http://latex.codecogs.com/gif.latex?O(nlogn)) | ![](http://latex.codecogs.com/gif.latex?O(n^2)) | ![](http://latex.codecogs.com/gif.latex?O(log(n+1))) | 否 |
-| 归并排序 |  ||                      |            |        |
-| 堆排序 |    |            |                      |            |        |
+| 归并排序 | ![](http://latex.codecogs.com/gif.latex?O(nlogn)) |![](http://latex.codecogs.com/gif.latex?O(nlogn))| ![](http://latex.codecogs.com/gif.latex?O(nlogn)) | ![](http://latex.codecogs.com/gif.latex?O(n)) | 是 |
+| 堆排序 | ![](http://latex.codecogs.com/gif.latex?O(nlogn)) | ![](http://latex.codecogs.com/gif.latex?O(nlogn)) | ![](http://latex.codecogs.com/gif.latex?O(nlogn)) | ![](http://latex.codecogs.com/gif.latex?O(n)) | 否 |
 | 桶排序 |    |            |                      |            |        |
 
 
