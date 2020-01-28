@@ -488,7 +488,7 @@ class Solution:
 
 在牛客网提交的结果：思路一执行时间4ms，占用内存472k;思路二执行时间6ms，占用内存495k。
 
-#39-[平衡二叉树](./39-IsBalanced_Solution.cpp)
+# 39 - [平衡二叉树](./39-IsBalanced_Solution.cpp)
 
 题目描述：  
 
@@ -502,3 +502,46 @@ class Solution:
 
 第二个思路是：从下往上返回深度，递归判断左右子树，在递归调用左右子树的时候，先判断左右子树是否满足平衡二叉树性质，如果不满足则直接返回`false`,否则将左右子树的深度最大的加1作为子树的深度返回回来。这样仅需要遍历一遍树的深度就好了。  
 
+# 40 - [数组中只出现一次的数字](./40-FindNumsAppearOnce.cpp)
+
+# 41 - [和为S的连续正数序列](./41-FindContinuousSequence.cpp)
+
+# 42 - [和为S的两个数字](./42-FindNumbersWithSum.cpp) 
+
+# 43 - [左旋转字符串](./43-LeftRotateString.cpp)
+
+# 44 - [反转单词顺序列](./44-ReverseSentence.cpp)
+
+# 45 - [扑克牌顺子](45-IsContinuous.cpp)
+
+# 46 - [约瑟夫环](./46-LastRemaining_Solution.cpp)
+
+[推理公式](https://blog.csdn.net/fuxuemingzhu/article/details/79702974)
+
+```c++
+// f(n, m) = (f(n-1, m) + m) % n; //每次在n个数字0，1，2， .... n-1中删除第m个数字最后剩下的数字。
+
+int f(int n, int m)
+{   
+    if (n==1) 
+        return 0;
+    else 
+        return (f(n-1, m) + m)%n;                                                                                                             
+}
+ return f(n, m);  //递归写法
+
+```
+
+# 47 - [不使用条件控制语句求累加和](./47-Sum_Solution.cpp)
+
+# 48 - [不使用加减乘除做加法](./48-Add.cpp) 
+
+# 
+
+# 55 - [有环链表环的入口](./55-EntryNodeOfLoop.cpp)
+
+解题思路：  
+
+两个指针，一个快一个慢，一个一次移动两步，一个一次移动一步。两个指针肯定在环内部相遇。两个指针相遇后，一个动一个不动（用一个变量统计环内节点个数），再次相遇的时候就知道环内节点个数了。然后再用找到链表倒数第k个节点的方法找到环的入口。  
+
+一个指针先向前移动k步，然后两个指针一起移动，当两个指针相遇的时候就指向环的入口了。
